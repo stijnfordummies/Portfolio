@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Titel van de webpagina</title>
+
+        <style>
+            
+            
+            
+            body{
+                margin: 0;
+            padding: 0;}
+            
+            .zwart{width: 2em;
+            height: 2em;
+            background-color: black;
+            float: left;
+            padding: 0;}
+            
+            .wit{width: 2em;
+            height: 2em;
+            background-color: lightgoldenrodyellow;
+        float: left;
+            padding: 0;}
+            
+            .blok{width: 20em;}
+            
+        </style>
+        
+        
+	</head>
+
+	<body>
+        
+        
+        
+        
+        
+        <script type="text/javascript">
+        "use strict";
+        var kleur;
+        for(var i = 1; i <= 5; i++)
+            {
+                    
+                for(var k = 0; k <= 8; k++)
+                {
+                document.write("<div class='blok'><div class='wit'></div></div>"); 
+                document.write("<div class='blok'><div class='zwart'></div></div>");   
+                k++;
+                }
+                
+                
+                for(var k = 0; k <= 8; k++)
+                {
+                
+                document.write("<div class='blok'><div class='zwart'></div></div>"); 
+                document.write("<div class='blok'><div class='wit'></div></div>");   
+                k++;
+                }
+                
+               
+            }
+            
+        
+            
+        </script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+	</body>
+</html>
