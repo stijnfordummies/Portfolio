@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *; script-src 'unsafe-inline' *">
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Titel van de webpagina</title>
+      <script src="../jquerry.js"></script>
+       
+        
+      
+<script> "use strict"
+        var ID, omschrijving, datum, afgewerkt;
+    
+    
+    /*function updateTables() {
+				teller = 0;
+				tText = "";
+				for (teller = 0; teller < highScore.length; teller += 1) {
+					tText += "<tr><td>" + highScore[teller].naam + "<\/td><td>" + highScore[teller].score + "<\/td><\/tr>";
+				}
+				$("#highscore tbody").html(tText);
+			}*/
+    $(document).ready(function () {
+                
+				ID = 1;
+                omschrijving = "taak MI";
+                      datum = 04/19/2016;
+                      afgewerkt = 05/19/2016;
+				Ingave = [{
+					"ID" : ID,
+					"omschrijving" : omschrijving,
+                      "datum" : datum,
+                      "afgewerkt" : afgewerkt
+				}];
+                      
+                      db = openDatabase('mydb', '1.0', 'Test DB', 0.1 * 1024 * 1024);
+                   
+                                       
+    
+    
+    
+    
+                        
+				db.transaction(function (tx) {
+					tx.executeSql('CREATE TABLE IF NOT EXISTS ingaves (ID, omschrijving, datum, afgewerkt)');
+					//where naam= ? and score= ?
+					tx.executeSql('select count(*) as aantal from ingaves where ID like ? and omschrijving like ?', [omschrijving, datum], 
+                                  
+                                  
+                                  function (tx, results) {
+						// kijk na of het resultaat ok is.
+						console.log("select werkt");
+						if (results.rows.item(0).aantal === 0) {
+							// er was nog geen combinatie met de naam & score in de db, dus voeg die nu toe :
+							tx.executeSql('INSERT INTO ingaves (ID, omschrijving, datum, afgewerkt) VALUES (?, ?)', [ID, omschrijving, datum, afgewerkt], function (tx, results) {
+								console.log("ok!");
+							}, function (tx, error) {
+								console.log("NOK!");
+							});
+						}
+
+					}, function (tx, error) {
+						console.log("NOK!");
+					});
+				});
+    
+    
+    
+    
+                      
+                      });
+        
+        
+    }
+        
+        </script>
+        
+        
+       
+        
+        
+        
+	</head>
+
+	<body>
+
+        <label for="ID">ID :</label>
+        <input type="text" id="ID">
+        <label for="omschrijving">omschrijving: </label>
+        <input type="text" id="omschrijving">
+        <label for="datum">datum: </label>
+        <input type="date" id="datum">
+        <label for="afgewerkt">afgewerkt op: </label>
+        <input type="date" id="afgewerkt"><br>
+        <button id="voegtoe">Voegtoe</button>
+        
+	</body>
+</html>
