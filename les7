@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *; script-src 'unsafe-inline' *">
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Titel van de webpagina</title>
+        <script src="../jquerry.js"></script>
+       
+        
+      
+        <script>
+            "use strict";
+
+/*var script = document.createElement('script');
+script.src = 'http://farm2.staticflickr.com/1500/26358208485_0c94bb9652_m.jpg'
+
+document.getElementsByTagName('head')[0].appendChild(script);
+            
+        
+        document.body.appendChild(script);*/
+  
+    
+    
+           function test(respons, responseData) { 
+                
+        $.getJSON('http://cors.io/?u=https://blockchain.info/stats?format=json', function(){})
+                var i = respons.jsonFlickrFeed[i];
+                
+     
+
+			  /*  $("#foto").text(i.addBack);
+        console.log(responseData);
+       $("#plaats").text(adres.formatted_address);*/
+               
+               console.log("succes!");
+        
+        };
+    
+         function test2(responseData, textStatus, jqHXR)
+               {
+                /*$.getJSON('http://cors.io/?u=https://blockchain.info/stats?format=json',function(){})
+                var i = responseData.jsonFlickrFeed[i];
+                
+     
+
+			$("#foto").text(i.addBack);*/
+                   console.log(responseData);
+                   console.log("error");
+                   
+                   
+                   
+                   
+               };
+    
+    
+    
+            $(document).ready(function () {
+				// we gaan de xml ophalen via ajax
+				$.ajax({
+                   
+                    type : 'GET',
+					dataType : 'jsonp',
+					url : 'http://api.flickr.com/services/feeds/photos_public.gne?tags=ingress&format=jsonp',
+                    success: test,
+                    error: test2,
+                    
+                   
+				});
+            
+                
+                
+
+            });
+    
+    
+    
+    
+                              </script>
+        
+        
+       
+        
+        
+        
+	</head>
+
+	<body>
+
+        
+        
+        
+	</body>
+</html>
