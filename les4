@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Titel van de webpagina</title>
+        <script src="../jquerry.js"></script>
+       
+        
+        
+	</head>
+
+	<body>
+         <script type="text/javascript">
+             "use strict";
+             $(document).ready(function () {
+                 
+                  var plaats = $("li").last().insertBefore();
+                  
+                 var aantal = $("li").length;
+                 $("body").prepend("Aantal plaatsen: " + aantal);
+                 
+                 var getal = Math.floor(Math.random() * 10);
+                 $("li").append(" temperatuur is " + getal);
+                
+                 
+                 
+                 /*$("li").append(" temperatuur is " + Math.floor(Math.random() * 10));*/
+                 
+                  
+                 
+                 
+                  
+              });
+
+        /*"use strict"
+            
+            
+             
+             
+             $("#inhoud").html("<li>Aalst</li><li>Gent</li><li>Antwerpen</li><li>Brussel</li><li>Hasselt</li>")
+             function(){
+                 var aantal = $("#inhoud li").length;
+            return "de inhoud is" + aantal;
+                                                          }*/
+        </script>
+        
+        
+        
+        <ul><li>Aalst</li>
+            <li>Gent</li>
+            <li>A'pen</li>
+        <li>Hasselt</li>
+        <li>Merchtem</li></ul>
+        
+	</body>
+</html>
