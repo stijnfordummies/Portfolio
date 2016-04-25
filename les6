@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Titel van de webpagina</title>
+        <script src="../jquerry.js"></script>
+        
+        <script>
+           
+           var urlPrefix = "http://static.cdprojektred.com/thewitcher.com/media/wallpapers/witcher3/big/";
+
+           var fotoArray = [
+                   "witcher3_en_wallpaper_the_witcher_3_wild_hunt_ciri_meditating_1920x1080_1446715310.jpg",            "witcher3_en_wallpaper_the_witcher_3_wild_hunt_geralt_with_trophies_1920x1080_1449484678.jpg", 
+                   "witcher3_en_wallpaper_wallpaper_10_1920x1080_1433327726.jpg"
+               ];
+
+ 
+           $(document).ready(function () {
+               "use strict";
+               $("#galerij").html("<div id='frame'><img /> </div>" + "<ul class='fotolijst'></ul>");
+               $("#frame img").attr("src", urlPrefix + fotoArray[0]);
+        
+               for (var i = 0; i < fotoArray.length; i++)
+            {
+                var foto = fotoArray[i];
+               var bron = urlPrefix + foto;
+              
+                var thumb = bron.replace(".jpg", "_t1.jpg") 
+                
+                
+               /* $(".fotolijst").append("<li><a href='#' rel='"> + i + "'> <img src = '" + thumb + "' /></a> </li>")*/
+               
+               $(".fotolijst").append("<li><a href='#' rel='" + i + "'> img src='" + thumb + "' /></a></li>");
+               
+                
+                
+               
+               };
+                
+        
+        
+        
+        
+                
+                
+               $(".fotolijst a").on("click", function (){
+                   var index = parseInt($(this).attr("rel"));
+                    var bron = urlPrefix + fotoArray[index];
+                    $("frame").html("<img />");
+                    $("frame img").attr("src", bron);
+                   
+                   $("frame").css("background-image", "url(" + $("#frame img").attr("src") + ")");
+                   $("#frame").html("<img style='display:none;' />");
+                   
+                   $("#frame img").attr("src, bron");
+                   $("#frame img").fadeIn("slow");
+                });
+                
+            
+                });
+        
+
+    
+   
+        </script>
+        
+        <style type="text/css">
+            ul.fotolijst{
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            ul.fotolijst li{
+                float:  left;
+                width: 100px;
+            }
+            ul.fotolijst img{
+                border: none;
+            }
+            #galerij{
+                text-align: center;
+            }
+            #frame{
+                width: 979px;
+                height: 551px;
+                margin: 10px 0px 10px 0px;
+                border: 3px solid black;
+               overflow: hidden;
+            }       
+        </style>
+        
+	</head>
+
+	<body>
+        <h1>Jquerry de basis</h1>
+        <div id="galerij"></div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+	</body>
+</html>
