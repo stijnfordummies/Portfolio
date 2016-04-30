@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Titel van de webpagina</title>
+        <link rel="stylesheet" href="themes/opdracht.css">
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css">
+        <script src="../jquerry.js"></script>
+        
+        
+        
+  
+        
+	</head>
+
+	<body>
+        
+        
+        
+      <div data-role="page" id="home">
+      <div data-role="header">
+          <h1>stel weeralert int</h1>
+          </div>
+          <div data-role="content">
+            <div data-role="content">
+              <form action="#" method="get">
+                <div data-role="fieldcontain">
+                  <label for="email">
+                    email adres:</label> 
+                    <input type="text" name="email" id="email" value=" ">
+                  </div>
+                  
+                  
+                   <div data-role="controlgroup">
+          <p>voor welk weer?</p>
+    <input type="checkbox" name="chechbox1" id="checkbox1" checked="">
+    <label for="checkbox1">regen</label><br>
+          
+    <input type="checkbox" name="chechbox1" id="checkbox2" checked="">
+        <label for="checkbox2">sneeuw</label><br>
+          
+    <input type="checkbox" name="chechbox1" id="checkbox3" checked="">
+          <label for="checkbox3">zon</label>
+</div>
+                  
+                    
+                  
+                  <label for="slider">aantal minuten vooraf:</label>
+                  <input type="range" name="slider" id="slider" value="1" min="0" max="100"><br>
+                  
+                  
+                  <label for="actief">actief:</label>
+                  <select name="actief" id="actief" data-role="slider">
+                  <option value="off">nee</option>
+                      <option value="on">jaa</option>
+                  </select><br>
+                <label for="adres">voor welk adres:</label>
+                  <select name="store" id="store">
+                  <option value="thuis">thuis</option>
+                      <option value="werk">Werk</option>
+                      <option value="vakantie">vakantie</option>
+                  </select><br>
+                  <button type="submit">annuleer</button>
+                  <button type="submit">bewaar</button>            
+                  </form>
+              </div>
+          </div>
+        </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <!--<label for="emailTekst">e-mail adres:</label><br>
+<input type="email" name="email" id="emailTekst" value="Sandar@emailadres">
+      
+      
+      <fieldset data-role="controlgroup">
+          <p>voor welk weer?</p>
+    <input type="checkbox" name="chechbox1" id="checkbox1" checked="">
+    <label for="checkbox1">regen</label><br>
+          
+    <input type="checkbox" name="chechbox1" id="checkbox2" checked="">
+        <label for="checkbox2">sneeuw</label><br>
+          
+    <input type="checkbox" name="chechbox1" id="checkbox3" checked="">
+          <label for="checkbox3">zon</label>
+</fieldset>
+      
+      
+      
+      <label for="slider">aantal minuten vooraf:</label>
+<input type="range" name="slider" id="slider" value="50" min="0" max="100">
+        </form>
+        -->
+        
+	</body>
+</html>
