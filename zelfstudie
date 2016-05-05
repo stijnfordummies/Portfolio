@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Titel van de webpagina</title>
+        <script src="../jquerry.js"></script>
+        
+        
+        
+        <style> body{
+            background-color: beige;
+            }
+            canvas{
+                background-color:deepskyblue; 
+            }
+        
+        
+        </style>
+        
+        
+        
+	</head>
+
+	<body>
+        <canvas id="myCanvas" width="500"; height="500";></canvas> <!--canvas aanmaken-->
+        <script type="text/javascript">
+        "use strict";
+            var canvas = document.getElementById("myCanvas"); /*variabele aanmaken voor de canvas*/
+            var ctx = canvas.getContext("2d");
+            var x = canvas.width/2;
+            var y = canvas.height - 30;
+            var dx = 2;
+            var dy = -2;
+            var ballRadius = 20;
+            draw();
+            
+            
+            
+            
+            function drawBall(){
+                ctx.beginPath();         
+            ctx.rect(20, 40, 50, 50); /*variabel.vorm(2x coordinaten van links, breedte, hoogte)*/
+            ctx.arc(x, y, ballRadius, 0, Math.PI*2, false); /*bij cirkels moet er ook de straal nog bij*/
+            ctx.fillStyle = "green"; /*kleur*/
+            ctx.fill();
+            ctx.closePath();
+                
+            }
+            function draw(){  
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+                 if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+                    dx = -dx;
+                    }
+                if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+                    dy = -dy;
+                    }
+                
+                
+                
+                
+                x += dx;
+                y += dy;
+                
+                
+                
+                
+                
+                
+            }
+            setInterval(draw, 10); /*zo word de functie draw elke 10 milliseconden opgeroepen*/
+            
+        </script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+	</body>
+</html>
