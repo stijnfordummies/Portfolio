@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Titel van de webpagina</title>
+     
+        
+        <link rel="stylesheet" href="themes/opdracht.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+        <script>
+        "use strict";
+            
+            var vragen = ["is", "het", "warm", "vandaag"];
+            var random = Math.floor(Math.random() * 10);
+            
+            
+            $(document).ready(function(){
+                $("#glas").hide();
+               $("#flesafb").on("click", function(){
+                    $("#flesafb").hide();
+                    $("#glas").show();
+                   
+                   
+                   
+                   });
+                   
+                   
+                            $("#jaa").on("click", function(){
+                   $("#glas").hide();
+                     $("#flesafb").show()});
+                   
+                   $("#nee").on("click", function(){
+                    $("#glas").hide();
+                    $("#flesafb").show();
+                    $("#nee").html("ben je zeker?")
+                    
+                  $("#nee").on("click", function(){
+                   $("#glas").hide();
+                    $("#flesafb").show();
+                    $("#nee").html(vragen[random])})});
+                
+                
+                function AJAX(response){
+                    var i;
+                    for(i = 0; i < response.results.length; i += 1) {
+                        merk = response.results[i];
+                        $("#test").html(merk);     
+                        
+                    }
+                   
+                    
+                };
+                
+                
+                
+                function callback(data){
+                $('#iec_azn_data').html(data.results[0]);
+            }
+                
+                $.ajax({
+	   type:"GET",
+	   url:"http://www.ophalvens.net/mi2/les10/automerken.php?m=all",
+	   dataType : 'json',
+	   success: AJAX
+                });
+
+    
+                
+                
+                
+            });
+            
+            
+        </script>
+        
+        
+    
+        
+	</head>
+
+	<body>
+        <div data-role="page" id="main">
+        <img src="zelfportret.jpg" alt="zelfportret" width="500">
+        <p>Mijn naam is Strijn Straetmans<br> 
+            en ik ben de coolste fotograaf van heeeeeeeel de wereld</p>
+        <a href="#fles" date-transition="slide" class="ui-link">volgende pg</a><br>
+            <a href="#auto" date-transition="slide" class="ui-link">Auto</a>
+        </div>
+        
+        
+        
+        <div data-role="page" id="fles">
+        <img src="fles.jpg" id="flesafb" alt="fles">
+            <img src="glas.jpg" id="glas" alt="glas"><br>
+             <a href="#main" date-transition="slide" class="ui-link">vorige pg</a>
+        
+            <form>
+            <label>wil je het item terug sluiten?</label>
+                <button type="button" id="jaa">jaa</button>
+                 <button type="button" id="nee">nee</button>
+                 <button type="button">ik weet het niet</button>
+                
+            </form>
+            
+            
+            
+        </div>
+        <div data-role="page" id="auto">
+        
+        <p id="test">HALLO</p>
+        </div>
+	</body>
+</html>
